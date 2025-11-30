@@ -88,7 +88,7 @@ def user2UserGameDecision(self, user1, user2):
         score2 -= 1
         print("User 1: {user1}")
         print("User 2: {user2}")
-        print("Player 1 wins round {numOfTrials[x]}!")
+        print("Player 1 wins round!")
         print("\n")
     #In the event that player 2 wins and player 1 loses a point
     elif (
@@ -99,7 +99,7 @@ def user2UserGameDecision(self, user1, user2):
         score2 += 1
         print("User 1: {user1}")
         print("User 2: {user2}")
-        print("Player 1 wins round {numOfTrials[x]}!")
+        print("Player 2 wins round!")
         print("\n")
             
 #End of program code
