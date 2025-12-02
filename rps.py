@@ -40,8 +40,7 @@ def user2UserGameDecision(user1, user2, rps):
 
 def user2COMGameDecision(player1, com, rps):
     rps = rps
-    score1 = 0
-    score2 = 0
+    
     #In the event that there's a tie between two players
     if player1 == com:
         print(f"Player 1: {player1}")
@@ -54,8 +53,6 @@ def user2COMGameDecision(player1, com, rps):
         (player1 == 'r' and com == 's') or (player1 == 'p' and com == 'r') or
         (player1 == 's' and com == 'p')
     ):
-        score1 += 1
-        score2 -= 1
         print(f"Player 1: {player1}")
         print(f"COM: {com}")
         result=print("Player 1 wins round!")
@@ -66,8 +63,6 @@ def user2COMGameDecision(player1, com, rps):
         (player1 == 'r' and com == 'p') or (player1 == 'p' and com == 's') or
         (player1 == 's' and com == 'r')
     ):
-        score1 -= 1
-        score2 += 1
         print(f"Player 1: {player1}")
         print(f"COM: {com}")
         result=print("COM wins round!")
