@@ -8,16 +8,10 @@ import random
 
 
 def user2UserGameDecision(user1, user2, rps):
-    user1 = user1
-    user2 = user2
     rps = rps
-    score1 = score2 = 0
     
     #In the event that there's a tie between two players
     if user1 == user2:
-        score1 += 0
-        score2 += 0
-        result = score1 = score2
         print(f"User 1: {user1}")
         print(f"User 2: {user2}")
         result = print("Tie!")
@@ -28,8 +22,6 @@ def user2UserGameDecision(user1, user2, rps):
         (user1 == 'r' and user2 == 's') or (user1 == 'p' and user2 == 'r') or
         (user1 == 's' and user2 == 'p')
     ):
-        score1 += 1
-        score2 -= 1
         print(f"User 1: {user1}")
         print(f"User 2: {user2}")
         result=print("Player 1 wins round!")
@@ -40,29 +32,18 @@ def user2UserGameDecision(user1, user2, rps):
         (user1 == 'r' and user2 == 'p') or (user1 == 'p' and user2 == 's') or
         (user1 == 's' and user2 == 'r')
     ):
-        score1 -= 1
-        score2 += 1
         print(f"User 1: {user1}")
         print(f"User 2: {user2}")
         result=print("Player 2 wins round!")
         print("\n")
         return result
-    
-    print("Final results")
-    print("===================================")
-    print(f"User 1's score: {score1}")
-    print(f"User 2's score: {score2}")
-    print("===================================")
 
-def user2COMGameDecision(self, player1, com, rps):
-    self.player1 = player1
-    self.com = com
-    self.rps = rps
-
+def user2COMGameDecision(player1, com, rps):
+    rps = rps
+    score1 = 0
+    score2 = 0
     #In the event that there's a tie between two players
     if player1 == com:
-        score1 += 0
-        score2 += 0
         print(f"Player 1: {player1}")
         print(f"COM: {com}")
         result = print("Tie!")
@@ -92,12 +73,6 @@ def user2COMGameDecision(self, player1, com, rps):
         result=print("COM wins round!")
         print("\n")
         return result
-    
-    print("Final results")
-    print("===================================")
-    print(f"Player's score: {score1}")
-    print(f"COM's score: {score2}")
-    print("===================================")
 
 if __name__ == "__main__":
     '''
