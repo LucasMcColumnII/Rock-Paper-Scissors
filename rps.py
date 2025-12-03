@@ -6,6 +6,49 @@
 #import math
 import random
 
+#For two local players only (Decrementing & Incrementing)
+def incrementScore1():
+    score1 += 1
+    print("User 1's score: {score1}")
+
+def incrementScore2():
+    score2 += 1
+    print("User 1's score: {score2}")
+
+def decrementScore1():
+    score1 -= 1
+    print("User 1's score: {score1}")
+
+def decrementScore2():
+    score2 -= 1
+    print("User 1's score: {score2}")
+
+
+#For two local players only (When there's a tie)
+def noNewPoints(score1, score2):
+    return print("User 1's score remains: {score1}\n User 2's score remains: {score2}")
+
+
+#For user and com players only (Decrementing & Incrementing)
+def incrementPlayer1():
+    playerScore += 1
+    print("Player's score: {playerScore}")
+
+def decrementPlayer1():
+    playerScore -= 1
+    print("COM's score: {playerScore}")
+
+def incrementCOM():
+    comScore += 1
+    print("COM's score: {comScore}")
+
+def decrementCOM():
+    comScore -= 1
+    print("COM's score: {comScore}")
+
+#For user and COM players only (When there's a tie)
+def noNewPoints2(playerScore, comScore):
+    return print("Player's score remains: {playerScore}\n COM's score remains: {comScore}")
 
 def user2UserGameDecision(user1, user2, rps):
     rps = rps
@@ -15,6 +58,7 @@ def user2UserGameDecision(user1, user2, rps):
         print(f"User 1: {user1}")
         print(f"User 2: {user2}")
         result = print("Tie!")
+        noNewPoints(user1, user2)
         print("\n")
         return result
     #In the event that player 1 wins and player 2 loses a point
@@ -25,6 +69,8 @@ def user2UserGameDecision(user1, user2, rps):
         print(f"User 1: {user1}")
         print(f"User 2: {user2}")
         result=print("Player 1 wins round!")
+        incrementScore1()
+        decrementScore2()
         print("\n")
         return result
     #In the event that player 2 wins and player 1 loses a point
@@ -35,6 +81,8 @@ def user2UserGameDecision(user1, user2, rps):
         print(f"User 1: {user1}")
         print(f"User 2: {user2}")
         result=print("Player 2 wins round!")
+        incrementScore2()
+        decrementScore1()
         print("\n")
         return result
 
@@ -46,6 +94,7 @@ def user2COMGameDecision(player1, com, rps):
         print(f"Player 1: {player1}")
         print(f"COM: {com}")
         result = print("Tie!")
+        noNewPoints2(player1, com)
         print("\n")
         return result
     #In the event that player 1 wins and player 2 loses a point
@@ -56,6 +105,8 @@ def user2COMGameDecision(player1, com, rps):
         print(f"Player 1: {player1}")
         print(f"COM: {com}")
         result=print("Player 1 wins round!")
+        incrementPlayer1()
+        decrementCOM()
         print("\n")
         return result
     #In the event that player 2 wins and player 1 loses a point
@@ -66,6 +117,8 @@ def user2COMGameDecision(player1, com, rps):
         print(f"Player 1: {player1}")
         print(f"COM: {com}")
         result=print("COM wins round!")
+        decrementPlayer1()
+        incrementCOM()
         print("\n")
         return result
 
