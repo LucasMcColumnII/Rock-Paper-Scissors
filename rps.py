@@ -5,6 +5,7 @@
 #Array initialization obtaining options in char form
 import math
 import random
+import time
 
 class RPS():
 
@@ -133,6 +134,9 @@ class RPS():
             RPS.incrementCOM(self)
             print("\n")
             return result
+        
+def timeDelay():
+    time.sleep(3) #There will be a delay of 3 seconds
 
 if __name__ == "__main__":
     '''
@@ -148,10 +152,14 @@ if __name__ == "__main__":
     print("\n")
     print("---------------------------------------------------------")
     print("Welcome to the game of Rock! Paper! Scissors!")
+    timeDelay()
     print("Objective: This program will execute the game 5 times.")
+    timeDelay()
     print("The player with the most points after each round wins.")
+    timeDelay()
     print("Let's begin!!")
     print("---------------------------------------------------------")
+    timeDelay()
     print("\n")
 
     print("Player Modes")
@@ -160,6 +168,8 @@ if __name__ == "__main__":
     modeSel = input("First, what mode would you like to play this game?: ")
     print("\n")
 
+    print("Processing player mode selection...")
+    timeDelay()
 
     if modeSel == '1':
         # Add features designed for user-to-user mode
@@ -170,14 +180,18 @@ if __name__ == "__main__":
                 print("Time to make a selection player 1...")
                 user1 = input("Which would you want to choose: rock, paper, or scissor?: ").lower()
                 print("Saving player 1's selection choice...")
+                timeDelay()
                 print("Thank you player 1 for making your selection.")
                 print("Player 2, prepare to make your selection...")
+                timeDelay()
                 user2 = input("Which would you want to choose: rock, paper, or scissor?: ").lower()
-                print("Saving player 1's selection choice...")
+                print("Saving player 2's selection choice...")
+                timeDelay()
                 print("Thank you player 2 for making your selection.")
                 print("\n")
 
                 print("Processing details...")
+                timeDelay()
                 if user1 in rps and user2 in rps:
                     rocPapSci.user2UserGameDecision(user1, user2, rps)
                     break
@@ -185,6 +199,7 @@ if __name__ == "__main__":
                     print("Input error. Try again")
 
         print("Finalizing results...")
+        timeDelay()
         print("========================================================")
         print(f"User 1's final score: {rocPapSci.score1}")
         print(f"User 2's final score: {rocPapSci.score2}")
@@ -199,14 +214,18 @@ if __name__ == "__main__":
                 print("Time to make a selection player 1...")
                 player1 = input("Which would you want to choose: rock, paper, or scissor?: ").lower()
                 print("Saving player 1's selection choice...")
+                timeDelay()
                 print("Thank you player 1 for making your selection.")
                 print("COM player, prepare to make your selection...")
+                timeDelay()
                 com = random.choice(rps).lower()
                 print("Saving COM's selection choice...")
+                timeDelay()
                 print("Thank you COM for making your selection.")
                 print("\n")
 
                 print("Processing details...")
+                timeDelay()
                 if player1 in rps and com in rps:
                     rocPapSci.user2COMGameDecision(player1, com, rps)
                     break
@@ -214,6 +233,7 @@ if __name__ == "__main__":
                     print("Input error. Try again")
 
         print("Finalizing results...")
+        timeDelay()
         print("========================================================")
         print(f"Player's final score: {rocPapSci.playerScore}")
         print(f"COM's final score: {rocPapSci.comScore}")
@@ -223,6 +243,7 @@ if __name__ == "__main__":
         # Notify the user that the selection other than '1' or '2' will not be considered
         print("Input Error. Try re-executing this program and make appropriate selection.")
         print("Closing out of program...")
+        timeDelay()
 
     print("\n")
 
