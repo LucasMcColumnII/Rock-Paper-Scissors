@@ -14,8 +14,6 @@ class RPS():
         self.playerScore=playerScore
         self.comScore=comScore
 
-        self.score1 = self.score2 = self.playerScore = self.comScore = 0
-
     #For two local players only (Decrementing & Incrementing)
     def incrementScore1(self):
         self.score1 += 1
@@ -145,7 +143,7 @@ if __name__ == "__main__":
     rps = ['r', 'p', 's']
 
     numOfTrials = 5
-    score1=score2=playerScore=comScore=0
+    sumScore1=sumScore2=sumPlayer=sumCOM=0
 
     print("\n")
     print("---------------------------------------------------------")
@@ -165,6 +163,8 @@ if __name__ == "__main__":
 
     if modeSel == '1':
         # Add features designed for user-to-user mode
+        score1=score2=playerScore=comScore=0
+        rocPapSci = RPS(score1, score2, playerScore, comScore)
         for x in range(numOfTrials):
             while True:
                 print("Time to make a selection player 1...")
@@ -178,15 +178,22 @@ if __name__ == "__main__":
                 print("\n")
 
                 print("Processing details...")
-                rocPapSci = RPS(score1, score2, playerScore, comScore)
                 if user1 in rps and user2 in rps:
                     rocPapSci.user2UserGameDecision(user1, user2, rps)
                     break
                 else:
                     print("Input error. Try again")
+
+        print("Finalizing results...")
+        print("========================================================")
+        print(f"User 1's final score: {rocPapSci.score1}")
+        print(f"User 2's final score: {rocPapSci.score2}")
+        print("========================================================")
     
     elif modeSel == '2':
         # Add features designed for user-to-COM mode
+        score1=score2=playerScore=comScore=0
+        rocPapSci = RPS(score1, score2, playerScore, comScore)
         for x in range(numOfTrials):
             while True:
                 print("Time to make a selection player 1...")
@@ -200,12 +207,18 @@ if __name__ == "__main__":
                 print("\n")
 
                 print("Processing details...")
-                rocPapSci = RPS(score1, score2, playerScore, comScore)
                 if player1 in rps and com in rps:
                     rocPapSci.user2COMGameDecision(player1, com, rps)
                     break
                 else:
                     print("Input error. Try again")
+
+        print("Finalizing results...")
+        print("========================================================")
+        print(f"Player's final score: {rocPapSci.playerScore}")
+        print(f"COM's final score: {rocPapSci.comScore}")
+        print("========================================================")
+
     else:
         # Notify the user that the selection other than '1' or '2' will not be considered
         print("Input Error. Try re-executing this program and make appropriate selection.")
