@@ -136,7 +136,7 @@ class RPS():
             return result
         
 def timeDelay():
-    time.sleep(3) #There will be a delay of 3 seconds
+    time.sleep(2) #There will be a delay of 2 seconds
 
 if __name__ == "__main__":
     '''
