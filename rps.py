@@ -14,68 +14,63 @@ class RPS():
         self.playerScore=playerScore
         self.comScore=comScore
 
-        score1 = score2 = 0
-        playerScore = comScore = 0
+        self.score1 = self.score2 = self.playerScore = self.comScore = 0
 
     #For two local players only (Decrementing & Incrementing)
-    def incrementScore1():
-        score1 += 1
-        print("User 1's score: {score1}")
+    def incrementScore1(self):
+        self.score1 += 1
+        print(f"User 1's score: {self.score1}")
 
-    def incrementScore2():
-        score2 += 1
-        print("User 1's score: {score2}")
+    def incrementScore2(self):
+        self.score2 += 1
+        print(f"User 2's score: {self.score2}")
 
-    def decrementScore1():
-        score1 -= 1
-        print("User 1's score: {score1}")
+    def decrementScore1(self):
+        self.score1 -= 1
+        print(f"User 1's score: {self.score1}")
 
-    def decrementScore2():
-        score2 -= 1
-        print("User 1's score: {score2}")
+    def decrementScore2(self):
+        self.score2 -= 1
+        print(f"User 2's score: {self.score2}")
 
 
     #For two local players only (When there's a tie)
-    def noNewPoints(self, score1, score2):
-        self.score1 = score1
-        self.score2 = score2
-        return print("User 1's score remains: {score1}\n User 2's score remains: {score2}")
+    def noNewPoints(self):
+        return print(f"User 1's score remains: {self.score1}\nUser 2's score remains: {self.score2}")
 
 
     #For user and com players only (Decrementing & Incrementing)
-    def incrementPlayer1():
-        playerScore += 1
-        print("Player's score: {playerScore}")
+    def incrementPlayer1(self):
+        self.playerScore += 1
+        print(f"Player's score: {self.playerScore}")
 
-    def decrementPlayer1():
-        playerScore -= 1
-        print("COM's score: {playerScore}")
+    def decrementPlayer1(self):
+        self.playerScore -= 1
+        print(f"Player's score: {self.playerScore}")
 
-    def incrementCOM():
-        comScore += 1
-        print("COM's score: {comScore}")
+    def incrementCOM(self):
+        self.comScore += 1
+        print(f"COM's score: {self.comScore}")
 
-    def decrementCOM():
-        comScore -= 1
-        print("COM's score: {comScore}")
+    def decrementCOM(self):
+        self.comScore -= 1
+        print(f"COM's score: {self.comScore}")
 
     #For user and COM players only (When there's a tie)
-    def noNewPoints2(self, playerScore, comScore):
-        self.playerScore = playerScore
-        self.comScore = comScore
-        return print("Player's score remains: {playerScore}\n COM's score remains: {comScore}")
+    def noNewPoints2(self):
+        return print(f"Player's score remains: {self.playerScore}\n COM's score remains: {self.comScore}")
 
-    def user2UserGameDecision(user1, user2, rps):
-        user1 = user1
-        user2 = user2
-        rps = rps
+    def user2UserGameDecision(self, user1, user2, rps):
+        self.user1 = user1
+        self.user2 = user2
+        self.rps = rps
     
         #In the event that there's a tie between two players
         if user1 == user2:
             print(f"User 1: {user1}")
             print(f"User 2: {user2}")
             result = print("Tie!")
-            RPS.noNewPoints(user1, user2)
+            RPS.noNewPoints(self)
             print("\n")
             return result
         #In the event that player 1 wins and player 2 loses a point
@@ -86,8 +81,8 @@ class RPS():
             print(f"User 1: {user1}")
             print(f"User 2: {user2}")
             result=print("Player 1 wins round!")
-            RPS.incrementScore1()
-            RPS.decrementScore2()
+            RPS.incrementScore1(self)
+            RPS.decrementScore2(self)
             print("\n")
             return result
         #In the event that player 2 wins and player 1 loses a point
@@ -98,22 +93,22 @@ class RPS():
             print(f"User 1: {user1}")
             print(f"User 2: {user2}")
             result=print("Player 2 wins round!")
-            RPS.incrementScore2()
-            RPS.decrementScore1()
+            RPS.incrementScore2(self)
+            RPS.decrementScore1(self)
             print("\n")
             return result
 
-    def user2COMGameDecision(player1, com, rps):
-        player1=player1
-        com=com
-        rps = rps
+    def user2COMGameDecision(self, player1, com, rps):
+        self.player1=player1
+        self.com=com
+        self.rps = rps
     
         #In the event that there's a tie between two players
         if player1 == com:
             print(f"Player 1: {player1}")
             print(f"COM: {com}")
             result = print("Tie!")
-            RPS.noNewPoints2(player1, com)
+            RPS.noNewPoints2(self)
             print("\n")
             return result
         #In the event that player 1 wins and player 2 loses a point
@@ -124,8 +119,8 @@ class RPS():
             print(f"Player 1: {player1}")
             print(f"COM: {com}")
             result=print("Player 1 wins round!")
-            RPS.incrementPlayer1()
-            RPS.decrementCOM()
+            RPS.incrementPlayer1(self)
+            RPS.decrementCOM(self)
             print("\n")
             return result
         #In the event that player 2 wins and player 1 loses a point
@@ -136,8 +131,8 @@ class RPS():
             print(f"Player 1: {player1}")
             print(f"COM: {com}")
             result=print("COM wins round!")
-            RPS.decrementPlayer1()
-            RPS.incrementCOM()
+            RPS.decrementPlayer1(self)
+            RPS.incrementCOM(self)
             print("\n")
             return result
 
@@ -150,6 +145,7 @@ if __name__ == "__main__":
     rps = ['r', 'p', 's']
 
     numOfTrials = 5
+    score1=score2=playerScore=comScore=0
 
     print("\n")
     print("---------------------------------------------------------")
@@ -166,6 +162,7 @@ if __name__ == "__main__":
     modeSel = input("First, what mode would you like to play this game?: ")
     print("\n")
 
+
     if modeSel == '1':
         # Add features designed for user-to-user mode
         for x in range(numOfTrials):
@@ -181,8 +178,9 @@ if __name__ == "__main__":
                 print("\n")
 
                 print("Processing details...")
+                rocPapSci = RPS(score1, score2, playerScore, comScore)
                 if user1 in rps and user2 in rps:
-                    RPS.user2UserGameDecision(user1, user2, rps)
+                    rocPapSci.user2UserGameDecision(user1, user2, rps)
                     break
                 else:
                     print("Input error. Try again")
@@ -202,8 +200,9 @@ if __name__ == "__main__":
                 print("\n")
 
                 print("Processing details...")
+                rocPapSci = RPS(score1, score2, playerScore, comScore)
                 if player1 in rps and com in rps:
-                    RPS.user2COMGameDecision(player1, com, rps)
+                    rocPapSci.user2COMGameDecision(player1, com, rps)
                     break
                 else:
                     print("Input error. Try again")
