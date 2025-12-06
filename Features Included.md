@@ -20,9 +20,9 @@ The game is played 5 times, where for each mode has the scoring set in this fash
 Both the User-to-User and User-to-COM player modes will do the following:
 
 ```
-- If User 1 (User-to-User) or Player 1 (User-to-COM) wins, they will earn a point (+1), whereas User 2 or COM will lose 
-  a point (-1)
-- If User 2 (User-to-User) or COM (User-to-COM) wins, they will earn a point (+1), whereas User 1 or Player 1 will lose 
-  a point (-1)
+- If User 1 (User-to-User) or Player 1 (User-to-COM) wins, they will earn a point (+1), whereas User 2 or 
+  COM will lose a point (-1)
+- If User 2 (User-to-User) or COM (User-to-COM) wins, they will earn a point (+1), whereas User 1 or 
+  Player 1 will lose a point (-1)
 - If there is a tie, the scores will not change
 ```
