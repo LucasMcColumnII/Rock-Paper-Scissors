@@ -26,3 +26,7 @@ Both the User-to-User and User-to-COM player modes will do the following:
   Player 1 will lose a point (-1)
 - If there is a tie, the scores will not change
 ```
+
+**Concluding Results**
+
+After the game ends, the program will print out the final score of both players
