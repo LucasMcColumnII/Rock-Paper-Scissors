@@ -30,3 +30,7 @@ Both the User-to-User and User-to-COM player modes will do the following:
 **Concluding Results**
 
 After the game ends, the program will print out the final score of both players
+
+## **Video Demonstration**
+
+<video src="RockPaperScissors Video Demo.mp4" width="800" height="800"></video>
