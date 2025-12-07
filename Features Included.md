@@ -33,4 +33,4 @@ After the game ends, the program will print out the final score of both players
 
 ## **Video Demonstration**
 
-<video src="RockPaperScissors Video Demo.mp4" width="800" height="800"></video>
+<video src="RockPaperScissors Video Demo.mp4" width="800" height="800" controls preload></video>
